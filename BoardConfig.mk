@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/RMX1911
+DEVICE_PATH := device/realme/RMX2030
 
 # Architecture
 TARGET_ARCH := arm64
@@ -61,7 +61,7 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := RMX1911
+TARGET_OTA_ASSERT_DEVICE := RMX2030
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
