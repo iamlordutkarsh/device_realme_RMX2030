@@ -12,22 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/realme/RMX1911/device.mk)
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, device/realme/RMX2030/device.mk)
+$(call inherit-product, vendor/havoc/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := realme
-PRODUCT_DEVICE := RMX1911
+PRODUCT_DEVICE := RMX2030
 PRODUCT_MANUFACTURER := realme
-PRODUCT_MODEL := Realme 5
-PRODUCT_NAME := lineage_RMX1911
+PRODUCT_MODEL := Realme 5i
+PRODUCT_NAME := havoc_RMX2030
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
 # Build info
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=RMX1911 \
-    PRODUCT_NAME=RMX1911 \
+    TARGET_DEVICE=RMX2030 \
+    PRODUCT_NAME=RMX2030 \
     PRIVATE_BUILD_DESC="coral-user 10 QQ3A.200605.001 6392402 release-keys"
 
 BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200605.001/6392402:user/release-keys"

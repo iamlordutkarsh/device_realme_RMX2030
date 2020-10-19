@@ -16,7 +16,7 @@
 
 BOARD_VENDOR := realme
 
-DEVICE_PATH := device/realme/RMX1911
+DEVICE_PATH := device/realme/RMX2030
 
 TARGET_USE_SDCLANG := true
 
@@ -55,7 +55,7 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := 9.0.6
 TARGET_KERNEL_CONFIG := vendor/trinket-perf_defconfig
-TARGET_KERNEL_SOURCE := kernel/realme/RMX1911
+TARGET_KERNEL_SOURCE := kernel/realme/RMX2030
 endif
 
 BOARD_ROOT_EXTRA_SYMLINKS := \
@@ -89,11 +89,14 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+    WITH_DEXPREOPT_PIC := true
+    ifneq ($(TARGET_BUILD_VARIANT),user)
+      DEX_PREOPT_DEFAULT := nostripping
+    endif
   endif
 endif
-
 # Netd
 TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
@@ -162,4 +165,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/realme/RMX1911/BoardConfigVendor.mk
+-include vendor/realme/RMX2030/BoardConfigVendor.mk
